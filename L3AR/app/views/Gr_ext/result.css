@@ -1,0 +1,25 @@
+.my-button-true{
+    background-color:blue;
+    border-color: black;
+    border-radius: 80;
+    border-width: 1;
+    color: whitesmoke;
+    font-size: 18;
+    font-weight: bold;
+    width: 80;
+    height: 80;
+    position: absolute;
+}
+
+.my-button-false{
+    background-color: red;
+    border-color: black;
+    border-radius: 80;
+    border-width: 1;
+    color: whitesmoke;
+    font-size: 18;
+    font-weight: bold;
+    width: 80;
+    height: 80;
+    position: absolute;
+}

@@ -1,0 +1,19 @@
+<page
+    navigatingTo="onNavigatingTo"
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <GridLayout rows="*" columns="100,*">
+            <Button text="Return" class="btn action-bar" row="0" col="0" tap="back"/>
+            <Label class="lbl" text="Choose a semantic" row="0" col="1" horizontalAlignment="center" verticalAlignment="center"/>
+        </GridLayout>
+    </ActionBar>
+    <GridLayout id="choice" verticalAlignment="center" height="100%"  width="100%" rows="*,*,*,*,*,*" columns="*" >
+        <Button text="Conflict-Free" class="btn my-button" tap="CF_ext" row="0" col="0"/>
+        <Button text="Grounded" class="btn my-button" tap="Gr_ext" row="1" col="0"/>
+        <Button text="Admissible" class="btn my-button" tap="disp" row="2" col="0"/>
+        <Button text="Preferred" class="btn my-button" tap="disp" row="3" col="0"/>
+        <Button text="Complete" class="btn my-button" tap="disp" row="4" col="0"/>
+        <Button text="Stable" class="btn my-button" tap="disp" row="5" col="0"/>
+    </GridLayout>
+</page>
