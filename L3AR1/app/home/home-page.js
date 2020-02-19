@@ -3,8 +3,10 @@ const view = require("tns-core-modules/ui/core/view");
 const timerModule = require("tns-core-modules/timer");
 const SVGImage = require("@teammaestro/nativescript-svg").SVGImage;
 const Button = require("tns-core-modules/ui/button").Button;
+const Frame = require("tns-core-modules/ui/frame");
 //const canvas = require("nativescript-canvas");
 
+let extGr = [-1];
 let AF = [0];
 let AF_ext = [0];
 
@@ -18,6 +20,11 @@ function onNavigatingTo(args) {
         }
         alert(AF + "\n" + AF_ext);
     }
+    let tmp = 0;
+    do {
+        tmp = extGr.pop();
+    } while (tmp != -1);
+    extGr.push(new Array([-1]));
 }
 
 exports.onNavigatingTo = onNavigatingTo;
@@ -251,7 +258,6 @@ function zoom(args) {
 
 exports.zoom = zoom;
 
-const Frame = require("tns-core-modules/ui/frame");
 
 function validateGraph(args) {
     const button = args.object;
@@ -261,37 +267,10 @@ function validateGraph(args) {
     //Frame.topmost().navigate("home2/semantics");
     const navigationEntry = {
         moduleName: "views/semantics",
-        context: { AF: AF_ext, Argument: argument },
+        context: { AF_ext: AF_ext, extGr: extGr },
         animated: false
     };
     myFrame.navigate(navigationEntry);
 }
 
 exports.validateGraph = validateGraph;
-
-let count = 0;
-function buttonTap(args) {
-    count++;
-    let button = args.object;
-    let parent = button.parent.parent;
-    if (parent) {
-        let lbl = view.getViewById(parent, "Label1");
-        if (lbl) {
-            lbl.text = "You tapped " + count + " times!";
-        }
-    }
-}
-function buttonReset(args) {
-    count = 0;
-    let button = args.object;
-    let parent = button.parent.parent;
-    if (parent) {
-        let label = view.getViewById(parent, "Label1");
-        if (label) {
-            label.text = "You tapped " + count + " times!";
-        }
-    }
-}
-exports.buttonReset = buttonReset;
-exports.buttonTap = buttonTap;
-

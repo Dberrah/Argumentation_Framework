@@ -17,7 +17,9 @@ function onNavigatingTo(args) {
     const context = args.context;
     Argument = context.Argument;
     page.bindingContext = navigationContext;
-    AF = context.AF;
+    AF_ext = context.AF_ext;
+    extGr = context.extGr;
+    alert(extGr + "\n" + AF_ext);
 }
 
 exports.onNavigatingTo = onNavigatingTo;
@@ -41,12 +43,12 @@ function Gr_ext(args) {
     const myFrame = page.frame;
     //var Attacked = [0];
     var isGr = true;
-    let extGr = [-1];
-    AF_ext = AF;//[0];
+    //let extGr = [-1];
+    //AF_ext = AF;//[0];
     //for (let index = 1; index < AF.length; index++) {
     //    AF_ext.push(AF[index]);
     //}
-
+    //alert("Attacked : " + Attacked);
     for (let index = 1; index < AF_ext.length; index++) {
         extGr.push(0);
         //if(AF[index].length<1){
@@ -64,7 +66,7 @@ function Gr_ext(args) {
                     if (AF_ext[i][j] == k) {
                         Attacked[k] += 1;
                         isGr = false;
-
+                        //alert("Attacked : " + k);
                     }
                 }
             }
@@ -86,19 +88,22 @@ function Gr_ext(args) {
         }
     }
     for (let index = 1; index < AF_ext.length; index++) {
-        if (AF[index].length < 1 || !AF[index]) {
+        if (AF_ext[index].length < 1 || !AF_ext[index]) {
             extGr[index] = -1;
         }
     }
     if (isGr) {
-        alert(AF + "\n" + AF_ext + "\nThere is a Gr ext\n"
-            + Attacked + "\n" + AF_ext.length + "\n" + extGr);
+        alert("AF" + "\n" + AF_ext + "\nThere is a Gr ext\n" + Attacked + "\n" + AF_ext.length + "\n" + extGr);
     } else {
-        alert(AF + "\n" + AF_ext + "\nGr ext is {}\n" + Attacked + "\n" + AF_ext.length + "\n" + extGr);
+        alert("AF" + "\n" + AF_ext + "\nGr ext is {}\n" + Attacked + "\n" + AF_ext.length + "\n" + extGr);
     }
+    for (let index = 0; index < Attacked.length; index++) {
+        Attacked.pop;
+    }
+    alert("Attacked : " + Attacked);
     const navigationEntry = {
         moduleName: "views/Gr_ext/result",
-        context: { AF: AF, extGr: extGr },
+        context: { AF_ext: AF_ext, extGr: extGr },
         animated: false
     };
     myFrame.navigate(navigationEntry);
