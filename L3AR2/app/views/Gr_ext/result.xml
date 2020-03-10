@@ -1,0 +1,14 @@
+<page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <GridLayout rows="*" columns="100,*">
+            <Button id="return" text="Return" class="btn action-bar" row="0" col="0" tap="back" />
+            <Label class="lbl" text="Grounded extension" row="0" col="1" horizontalAlignment="center" verticalAlignment="center" />
+        </GridLayout>
+    </ActionBar>
+    <ScrollView id="border" orientation="vertical">
+        <StackLayout>
+            <GridLayout width="100%" height="100%" id="AF" pinch="zoom" loaded="pageLoaded" rows="*" />
+        </StackLayout>
+    </ScrollView>
+</page>

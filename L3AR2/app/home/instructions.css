@@ -1,0 +1,13 @@
+.my-button{
+    width: 100;
+    height: 50;
+    font-size: 15;
+    font-style: normal;
+    background-color: rgb(51, 134, 161);
+    border-color: black;
+    color: whitesmoke;
+}
+#instruct{
+    font-size: 20;
+    padding: 8;
+}

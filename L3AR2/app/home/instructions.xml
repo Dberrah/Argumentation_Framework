@@ -1,0 +1,10 @@
+<Page textWrap="true">
+    <StackLayout verticalAlignment="center" horizontalAlignment="center">
+        <Label id="instruct" textAlignment="center" textWrap="true" text="To add an Argument tap on the 'ADDARG' button." />
+        <Label id="instruct" textAlignment="center" textWrap="true" text="To suppress an Argument tap and hold on the Argument you want to suppress." />
+        <Label id="instruct" textAlignment="center" textWrap="true" text="To clear the graph tap on the 'CLEAR' button." />
+        <Label id="instruct" textAlignment="center" textWrap="true" text="To add an attack double-tap on the first argument then on the second, it creates an edge from the first to the second argument" />
+        <Label id="instruct" textAlignment="center" textWrap="true" text="If the edge already exists it suppress the attack between the arguments." />
+        <Button text="OK" class="btn my-button" tap="onCloseModal" horizontalAlignment="right" verticalAlignment="center" />
+    </StackLayout>
+</Page>

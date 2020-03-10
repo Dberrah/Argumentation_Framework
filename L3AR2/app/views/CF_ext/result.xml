@@ -1,0 +1,9 @@
+<page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <GridLayout rows="*" columns="100,*">
+            <Button id="return" text="Return" class="btn action-bar" row="0" col="0" tap="back" />
+            <Label class="lbl" text="Conflict-Free extension" row="0" col="1" horizontalAlignment="center" verticalAlignment="center" />
+        </GridLayout>
+    </ActionBar>
+</page>
